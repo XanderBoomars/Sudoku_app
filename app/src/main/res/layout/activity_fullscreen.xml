@@ -1,0 +1,388 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.xander.sudoku_app.FullscreenActivity">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3">
+
+                
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/padding_button"
+                        >
+
+                        <TextView
+                            android:id="@+id/textview_button_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textSize="@dimen/textsize_button_counter"
+
+                            android:layout_alignBottom="@+id/button_1"
+                            android:layout_alignRight="@+id/button_1"
+                            android:elevation="100dp"/>
+                        <Button
+                            android:id="@+id/button_1"
+                            android:layout_width="@dimen/box_size"
+                            android:layout_height="@dimen/box_size"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="1"
+                            android:textSize="@dimen/textsize_button"
+                            android:textStyle="bold"
+                            android:background="@drawable/tags_rounded_corners"
+
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/padding_button"
+                        >
+
+                        <TextView
+                            android:id="@+id/textview_button_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textSize="@dimen/textsize_button_counter"
+
+                            android:layout_alignBottom="@+id/button_2"
+                            android:layout_alignRight="@+id/button_2"
+                            android:elevation="100dp"/>
+                        <Button
+                            android:id="@+id/button_2"
+                            android:layout_width="@dimen/box_size"
+                            android:layout_height="@dimen/box_size"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="2"
+                            android:textSize="@dimen/textsize_button"
+                            android:textStyle="bold"
+                            android:background="@drawable/tags_rounded_corners"
+
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/padding_button"
+                        >
+
+                        <TextView
+                            android:id="@+id/textview_button_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textSize="@dimen/textsize_button_counter"
+
+                            android:layout_alignBottom="@+id/button_3"
+                            android:layout_alignRight="@+id/button_3"
+                            android:elevation="100dp"/>
+                        <Button
+                            android:id="@+id/button_3"
+                            android:layout_width="@dimen/box_size"
+                            android:layout_height="@dimen/box_size"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="3"
+                            android:textSize="@dimen/textsize_button"
+                            android:textStyle="bold"
+                            android:background="@drawable/tags_rounded_corners"
+
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/padding_button"
+                        >
+
+                        <TextView
+                            android:id="@+id/textview_button_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textSize="@dimen/textsize_button_counter"
+
+                            android:layout_alignBottom="@+id/button_4"
+                            android:layout_alignRight="@+id/button_4"
+                            android:elevation="100dp"/>
+                        <Button
+                            android:id="@+id/button_4"
+                            android:layout_width="@dimen/box_size"
+                            android:layout_height="@dimen/box_size"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="4"
+                            android:textSize="@dimen/textsize_button"
+                            android:textStyle="bold"
+                            android:background="@drawable/tags_rounded_corners"
+
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/padding_button"
+                        >
+
+                        <TextView
+                            android:id="@+id/textview_button_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textSize="@dimen/textsize_button_counter"
+
+                            android:layout_alignBottom="@+id/button_5"
+                            android:layout_alignRight="@+id/button_5"
+                            android:elevation="100dp"/>
+                        <Button
+                            android:id="@+id/button_5"
+                            android:layout_width="@dimen/box_size"
+                            android:layout_height="@dimen/box_size"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="5"
+                            android:textSize="@dimen/textsize_button"
+                            android:textStyle="bold"
+                            android:background="@drawable/tags_rounded_corners"
+
+                            />
+
+
+                    </RelativeLayout>
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/padding_button"
+                        >
+
+                        <TextView
+                            android:id="@+id/textview_button_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textSize="@dimen/textsize_button_counter"
+
+                            android:layout_alignBottom="@+id/button_6"
+                            android:layout_alignRight="@+id/button_6"
+                            android:elevation="100dp"/>
+                        <Button
+                            android:id="@+id/button_6"
+                            android:layout_width="@dimen/box_size"
+                            android:layout_height="@dimen/box_size"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="6"
+                            android:textSize="@dimen/textsize_button"
+                            android:textStyle="bold"
+                            android:background="@drawable/tags_rounded_corners"
+
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/padding_button"
+                        >
+
+                        <TextView
+                            android:id="@+id/textview_button_7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textSize="@dimen/textsize_button_counter"
+
+                            android:layout_alignBottom="@+id/button_7"
+                            android:layout_alignRight="@+id/button_7"
+                            android:elevation="100dp"/>
+                        <Button
+                            android:id="@+id/button_7"
+                            android:layout_width="@dimen/box_size"
+                            android:layout_height="@dimen/box_size"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="7"
+                            android:textSize="@dimen/textsize_button"
+                            android:textStyle="bold"
+                            android:background="@drawable/tags_rounded_corners"
+
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/padding_button"
+                        >
+
+                        <TextView
+                            android:id="@+id/textview_button_8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textSize="@dimen/textsize_button_counter"
+
+                            android:layout_alignBottom="@+id/button_8"
+                            android:layout_alignRight="@+id/button_8"
+                            android:elevation="100dp"/>
+                        <Button
+                            android:id="@+id/button_8"
+                            android:layout_width="@dimen/box_size"
+                            android:layout_height="@dimen/box_size"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="8"
+                            android:textSize="@dimen/textsize_button"
+                            android:textStyle="bold"
+                            android:background="@drawable/tags_rounded_corners"
+
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/padding_button"
+                        >
+
+                        <TextView
+                            android:id="@+id/textview_button_9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textSize="@dimen/textsize_button_counter"
+
+                            android:layout_alignBottom="@+id/button_9"
+                            android:layout_alignRight="@+id/button_9"
+                            android:elevation="100dp"/>
+                        <Button
+                            android:id="@+id/button_9"
+                            android:layout_width="@dimen/box_size"
+                            android:layout_height="@dimen/box_size"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="9"
+                            android:textSize="@dimen/textsize_button"
+                            android:textStyle="bold"
+                            android:background="@drawable/tags_rounded_corners"
+
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/padding_button"
+                        >
+
+
+                        <Button
+                            android:id="@+id/button_switch"
+                            android:layout_width="@dimen/box_size"
+                            android:layout_height="@dimen/box_size"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="s"
+                            android:textSize="@dimen/textsize_button"
+                            android:textStyle="bold"
+                            android:background="@drawable/tags_rounded_corners"
+
+                            />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+                
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+    </FrameLayout>
+
+</FrameLayout>
