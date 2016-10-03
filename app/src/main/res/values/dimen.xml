@@ -2,7 +2,7 @@
 <resources>
     <dimen name="box_size">100dp</dimen>
     <dimen name="textsize_button">50sp</dimen>
-    <dimen name="textsize_button_counter">25sp</dimen>
+    <dimen name="textsize_button_counter">30sp</dimen>
     <dimen name="padding_button">5dp</dimen>
 
 
