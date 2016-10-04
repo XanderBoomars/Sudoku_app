@@ -3,8 +3,9 @@
     <dimen name="box_size">100dp</dimen>
     <dimen name="textsize_button">50sp</dimen>
     <dimen name="textsize_button_counter">30sp</dimen>
-    <dimen name="padding_button">5dp</dimen>
-
+    <dimen name="padding_button">10dp</dimen>
+    <dimen name="cel_size">50dp</dimen>
+    <dimen name="textsize_cel">30sp</dimen>
 
 
 </resources>

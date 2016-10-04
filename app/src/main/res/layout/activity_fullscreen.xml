@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
+        android:background="@color/background"
         >
 
 
@@ -17,21 +18,68 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             >
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3">
 
-                
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/grid"
+                    />
 
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/cel_1"
+                    android:layout_width="@dimen/cel_size"
+                    android:layout_height="@dimen/cel_size"
+                    android:layout_marginLeft="225dp"
+                    android:layout_marginTop="98dp"
+                    android:text="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/textsize_cel"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:onClick="celClicked"
+                    />
+                <TextView
+                    android:id="@+id/cel_2"
+                    android:layout_width="@dimen/cel_size"
+                    android:layout_height="@dimen/cel_size"
+                    android:layout_marginLeft="295dp"
+                    android:layout_marginTop="98dp"
+                    android:text="2"
+                    android:gravity="center"
+                    android:textSize="@dimen/textsize_cel"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:onClick="celClicked"
+
+                    />
+
+                <TextView
+                    android:id="@+id/cel_3"
+                    android:layout_width="@dimen/cel_size"
+                    android:layout_height="@dimen/cel_size"
+                    android:layout_marginLeft="370dp"
+                    android:layout_marginTop="98dp"
+                    android:text="3"
+                    android:gravity="center"
+                    android:textSize="@dimen/textsize_cel"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:onClick="celClicked"
+
+                    />
+
+            </RelativeLayout>
 
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
-                
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -65,7 +113,7 @@
                             android:textSize="@dimen/textsize_button"
                             android:textStyle="bold"
                             android:background="@drawable/tags_rounded_corners"
-
+                            android:onClick="numberButtonClicked"
                             />
 
 
@@ -98,6 +146,7 @@
                             android:textSize="@dimen/textsize_button"
                             android:textStyle="bold"
                             android:background="@drawable/tags_rounded_corners"
+                            android:onClick="numberButtonClicked"
                             />
 
 
@@ -130,6 +179,7 @@
                             android:textSize="@dimen/textsize_button"
                             android:textStyle="bold"
                             android:background="@drawable/tags_rounded_corners"
+                            android:onClick="numberButtonClicked"
 
                             />
 
@@ -163,6 +213,7 @@
                             android:textSize="@dimen/textsize_button"
                             android:textStyle="bold"
                             android:background="@drawable/tags_rounded_corners"
+                            android:onClick="numberButtonClicked"
 
                             />
 
@@ -196,6 +247,7 @@
                             android:textSize="@dimen/textsize_button"
                             android:textStyle="bold"
                             android:background="@drawable/tags_rounded_corners"
+                            android:onClick="numberButtonClicked"
 
                             />
 
@@ -240,6 +292,7 @@
                             android:textSize="@dimen/textsize_button"
                             android:textStyle="bold"
                             android:background="@drawable/tags_rounded_corners"
+                            android:onClick="numberButtonClicked"
 
                             />
 
@@ -273,6 +326,7 @@
                             android:textSize="@dimen/textsize_button"
                             android:textStyle="bold"
                             android:background="@drawable/tags_rounded_corners"
+                            android:onClick="numberButtonClicked"
 
                             />
 
@@ -306,6 +360,7 @@
                             android:textSize="@dimen/textsize_button"
                             android:textStyle="bold"
                             android:background="@drawable/tags_rounded_corners"
+                            android:onClick="numberButtonClicked"
 
                             />
 
@@ -339,6 +394,7 @@
                             android:textSize="@dimen/textsize_button"
                             android:textStyle="bold"
                             android:background="@drawable/tags_rounded_corners"
+                            android:onClick="numberButtonClicked"
 
                             />
 
@@ -370,7 +426,7 @@
                     </RelativeLayout>
 
                 </LinearLayout>
-                
+
 
 
             </LinearLayout>
