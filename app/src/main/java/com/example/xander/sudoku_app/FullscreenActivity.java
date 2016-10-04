@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 public class FullscreenActivity extends AppCompatActivity {
     int currentNumberSelected=0;
-
     private Cel[] sudokuCels = new Cel[81];
 
 
@@ -22,9 +21,16 @@ public class FullscreenActivity extends AppCompatActivity {
 
 
 
+    @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullscreen);
+
+
+        setup();
+
+    }
+    public void setup(){
 
         for(int i=0;i<81;i++){
             int id;
@@ -37,17 +43,41 @@ public class FullscreenActivity extends AppCompatActivity {
 
             TextView text = (TextView) findViewById(id);
             sudokuCels[i] = new Cel(text);
+
         }
 
+        String[] puzzle = new String[9];
+        puzzle = getResources().getStringArray(R.array.puzzle_2);
 
+        StringBuilder puzzleString = new StringBuilder();
+        puzzleString.append(puzzle[0]);
+        puzzleString.append(puzzle[1]);
+        puzzleString.append(puzzle[2]);
+        puzzleString.append(puzzle[3]);
+        puzzleString.append(puzzle[4]);
+        puzzleString.append(puzzle[5]);
+        puzzleString.append(puzzle[6]);
+        puzzleString.append(puzzle[7]);
+        puzzleString.append(puzzle[8]);
+
+
+        for(int i=0;i<81;i++){
+
+            //sudokuCels[i].Write(Character.getNumericValue(puzzleString.charAt(i)));
+        }
 
     }
+
+
+
+
 
     public void celClicked (View view){
         String id = getResources().getResourceName(view.getId());
         String id_number = id.substring(Math.max(id.length() - 2, 0));
         int idInt = Integer.parseInt(id_number);
-        sudokuCels[idInt].clickedWrite(currentNumberSelected);
+
+        sudokuCels[idInt].Write(currentNumberSelected);
     }
 
     public void numberButtonClicked (View view) {

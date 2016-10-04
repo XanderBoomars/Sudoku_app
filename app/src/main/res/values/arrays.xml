@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="puzzle_1">
+        <item>501040370</item>
+        <item>400003000</item>
+        <item>002087604</item>
+        <item>000300002</item>
+        <item>040009850</item>
+        <item>005218009</item>
+        <item>800700203</item>
+        <item>739020080</item>
+        <item>020000090</item>
+    </string-array>
+
+    <string-array name="puzzle_2">
+        <item>111111111</item>
+        <item>111111111</item>
+        <item>111111111</item>
+        <item>111111111</item>
+        <item>111111111</item>
+        <item>111111111</item>
+        <item>111111111</item>
+        <item>111111111</item>
+        <item>111111111</item>
+    </string-array>
+</resources>
