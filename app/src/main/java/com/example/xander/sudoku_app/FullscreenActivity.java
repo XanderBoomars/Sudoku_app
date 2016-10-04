@@ -17,9 +17,7 @@ public class FullscreenActivity extends AppCompatActivity {
 
     private Cel[] sudokuCels = new Cel[81];
 
-    private TextView cel_1;
-    private TextView cel_2;
-    private TextView cel_3;
+
 
 
 
@@ -28,8 +26,15 @@ public class FullscreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullscreen);
 
-        for(int i=0;i>81;i++){
-            int id = getResources().getIdentifier("cel_"+i,"id",getPackageName());
+        for(int i=0;i<81;i++){
+            int id;
+            if(i<10){
+                id = getResources().getIdentifier("cel_0" + i, "id", getPackageName());
+            }
+            else {
+                id = getResources().getIdentifier("cel_" + i, "id", getPackageName());
+            }
+
             TextView text = (TextView) findViewById(id);
             sudokuCels[i] = new Cel(text);
         }
@@ -39,25 +44,10 @@ public class FullscreenActivity extends AppCompatActivity {
     }
 
     public void celClicked (View view){
-        switch  (view.getId()){
-            case (R.id.cel_1):
-                cel_1.setText(Integer.toString(currentNumberSelected));
-                Toast toast1 = Toast.makeText(getApplicationContext(), "clicked on cel 1", Toast.LENGTH_SHORT);
-                toast1.show();
-                break;
-
-            case (R.id.cel_2):
-                cel_2.setText(Integer.toString(currentNumberSelected));
-                Toast toast2 = Toast.makeText(getApplicationContext(), "clicked on cel 2", Toast.LENGTH_SHORT);
-                toast2.show();
-                break;
-
-            case (R.id.cel_3):
-                cel_3.setText(Integer.toString(currentNumberSelected));
-                Toast toast3 = Toast.makeText(getApplicationContext(), "clicked on cel 3", Toast.LENGTH_SHORT);
-                toast3.show();
-                break;
-        }
+        String id = getResources().getResourceName(view.getId());
+        String id_number = id.substring(Math.max(id.length() - 2, 0));
+        int idInt = Integer.parseInt(id_number);
+        sudokuCels[idInt].clickedWrite(currentNumberSelected);
     }
 
     public void numberButtonClicked (View view) {

@@ -13,13 +13,7 @@ public class Cel {
         celNumber = 0;
     }
 
-    public void setNumber(int x){
-        celNumber=x;
-    }
 
-    public int returnNumber(){
-        return celNumber;
-    }
 
     public void setVisibility(int x){
         if(x==1){
@@ -29,6 +23,10 @@ public class Cel {
         if(x==0){
             celTextView.setVisibility(View.VISIBLE);
         }
+    }
+
+    public void clickedWrite(int x){
+        celTextView.setText(Integer.toString(x));
     }
 
 
