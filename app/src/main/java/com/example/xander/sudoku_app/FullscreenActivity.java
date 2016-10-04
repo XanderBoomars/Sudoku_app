@@ -15,6 +15,8 @@ import android.widget.Toast;
 public class FullscreenActivity extends AppCompatActivity {
     int currentNumberSelected=0;
 
+    private Cel[] sudokuCels = new Cel[81];
+
     private TextView cel_1;
     private TextView cel_2;
     private TextView cel_3;
@@ -26,9 +28,12 @@ public class FullscreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullscreen);
 
-        cel_1 = (TextView) findViewById(R.id.cel_1);
-        cel_2 = (TextView) findViewById(R.id.cel_2);
-        cel_3 = (TextView) findViewById(R.id.cel_3);
+        for(int i=0;i>81;i++){
+            int id = getResources().getIdentifier("cel_"+i,"id",getPackageName());
+            TextView text = (TextView) findViewById(id);
+            sudokuCels[i] = new Cel(text);
+        }
+
 
 
     }
