@@ -12,8 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//TODO zorgen dat de buttons niet negatief kunnen worden en daarbij ook niet weer geel worden bij een negatief getal
-//TODO zorgen dat je niet meer dan 9 keer hetzelfde getal kan invullen
+
 
 
 public class FullscreenActivity extends AppCompatActivity {
@@ -89,8 +88,6 @@ public class FullscreenActivity extends AppCompatActivity {
         puzzleString.append(puzzle[8]);
 
 
-
-
         for(int i=0;i<81;i++){
             int x = Character.getNumericValue(puzzleString.charAt(i));
 
@@ -102,6 +99,15 @@ public class FullscreenActivity extends AppCompatActivity {
             }
             else{
                 sudokuCels[i].setColor(1);
+            }
+        }
+
+        for(int i=0;i<81;i++){
+            if(sudokuCels[i].getValue()==currentNumberSelected){
+                sudokuCels[i].setSelected();
+            }
+            else{
+                sudokuCels[i].setUnselected();
             }
         }
 
