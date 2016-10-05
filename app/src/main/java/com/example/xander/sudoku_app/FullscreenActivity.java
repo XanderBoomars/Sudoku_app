@@ -8,15 +8,23 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//TODO zorgen dat de buttons niet negatief kunnen worden en daarbij ook niet weer geel worden bij een negatief getal
+//TODO zorgen dat je niet meer dan 9 keer hetzelfde getal kan invullen
+
 
 public class FullscreenActivity extends AppCompatActivity {
-    private int currentNumberSelected=5;
+    private int currentNumberSelected=1;
     private Cel sudokuCels[] = new Cel[81];
     private TextView numbersLeftTextview[] = new TextView[9];
     private int numbersLeft[] = new int[9];
+
+    private Button numberButtons[] = new Button[9];
+
+
 
 
 
@@ -31,6 +39,16 @@ public class FullscreenActivity extends AppCompatActivity {
 
     }
     public void setup(){
+        numberButtons[0] = (Button)findViewById(R.id.button_1);
+        numberButtons[1] = (Button)findViewById(R.id.button_2);
+        numberButtons[2] = (Button)findViewById(R.id.button_3);
+        numberButtons[3] = (Button)findViewById(R.id.button_4);
+        numberButtons[4] = (Button)findViewById(R.id.button_5);
+        numberButtons[5] = (Button)findViewById(R.id.button_6);
+        numberButtons[6] = (Button)findViewById(R.id.button_7);
+        numberButtons[7] = (Button)findViewById(R.id.button_8);
+        numberButtons[8] = (Button)findViewById(R.id.button_9);
+
 
         for(int i=0;i<9;i++){
             numbersLeft[i]=9;
@@ -94,9 +112,35 @@ public class FullscreenActivity extends AppCompatActivity {
     public void numberCounter(int x){
         numbersLeft[x-1] = numbersLeft[x-1]-1;
         numbersLeftTextview[x-1].setText(Integer.toString(numbersLeft[x-1]));
+
+        for(int i=0;i<9;i++){
+            if(numbersLeft[i]==0){
+                numberButtons[i].setBackgroundResource(R.drawable.tags_rounded_corners_grey);
+            }
+            else{
+                if(i==currentNumberSelected-1){
+                    numberButtons[i].setBackgroundResource(R.drawable.tags_rounded_corners_selected);
+                }
+                else {
+                    numberButtons[i].setBackgroundResource(R.drawable.tags_rounded_corners);
+                }
+            }
+        }
+
+
+
     }
 
+    public void clearCel(int id){
+        int currentValue = sudokuCels[id].getValue();
+        if(currentValue==0){
 
+        }
+        else{
+            numbersLeft[currentValue-1] = numbersLeft[currentValue-1]+1;
+            numbersLeftTextview[currentValue-1].setText(Integer.toString(numbersLeft[currentValue-1]));
+        }
+    }
 
 
     public void celClicked (View view){
@@ -107,9 +151,27 @@ public class FullscreenActivity extends AppCompatActivity {
         Toast toast1 = Toast.makeText(getApplicationContext(), id_number, Toast.LENGTH_SHORT);
         toast1.show();
 
-        numberCounter(currentNumberSelected);
-        sudokuCels[idInt].Write(currentNumberSelected);
-        sudokuCels[idInt].setSelected();
+        if(currentNumberSelected==sudokuCels[idInt].getValue()){//je wilt hetzelfde nummer invullen dat er al staat en dus wordt het vakje geleegd
+            clearCel(idInt);
+            sudokuCels[idInt].Write(0);
+            sudokuCels[idInt].setUnselected();
+        }
+        else {
+            if(numbersLeft[currentNumberSelected-1]==0){
+                Toast toast = Toast.makeText(getApplicationContext(), "You have already placed 9 of this number!", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+
+            else {
+                if (sudokuCels[idInt].getValue() != 0) { //staat al iets in het vakje dus dit moet worden geleegd
+                    clearCel(idInt);
+                }
+                numberCounter(currentNumberSelected);
+                sudokuCels[idInt].Write(currentNumberSelected);
+                sudokuCels[idInt].setSelected();
+
+            }
+        }
     }
 
     public void numberButtonClicked (View view) {
@@ -171,6 +233,20 @@ public class FullscreenActivity extends AppCompatActivity {
                 break;
 
 
+        }
+
+
+
+        for(int i=0;i<9;i++){
+            if(numbersLeft[i]==0){
+                numberButtons[i].setBackgroundResource(R.drawable.tags_rounded_corners_grey);
+            }
+            else if(i!=currentNumberSelected-1){
+                numberButtons[i].setBackgroundResource(R.drawable.tags_rounded_corners);
+            }
+            else {
+                numberButtons[i].setBackgroundResource(R.drawable.tags_rounded_corners_selected);
+            }
         }
 
         for(int i=0;i<81;i++){
