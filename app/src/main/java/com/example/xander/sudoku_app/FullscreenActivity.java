@@ -148,8 +148,6 @@ public class FullscreenActivity extends AppCompatActivity {
         String id_number = id.substring(Math.max(id.length() - 2, 0));
         int idInt = Integer.parseInt(id_number)-1;
 
-        Toast toast1 = Toast.makeText(getApplicationContext(), id_number, Toast.LENGTH_SHORT);
-        toast1.show();
 
         if(currentNumberSelected==sudokuCels[idInt].getValue()){//je wilt hetzelfde nummer invullen dat er al staat en dus wordt het vakje geleegd
             clearCel(idInt);
@@ -180,56 +178,38 @@ public class FullscreenActivity extends AppCompatActivity {
         switch (view.getId()) {
             case (R.id.button_1):
                 currentNumberSelected = 1;
-                Toast toast1 = Toast.makeText(getApplicationContext(), "clicked on button1", Toast.LENGTH_SHORT);
-                toast1.show();
                 break;
 
             case (R.id.button_2):
                 currentNumberSelected = 2;
-                Toast toast2 = Toast.makeText(getApplicationContext(), "clicked on button2", Toast.LENGTH_SHORT);
-                toast2.show();
                 break;
 
             case (R.id.button_3):
                 currentNumberSelected = 3;
-                Toast toast3 = Toast.makeText(getApplicationContext(), "clicked on button3", Toast.LENGTH_SHORT);
-                toast3.show();
                 break;
 
             case (R.id.button_4):
                 currentNumberSelected = 4;
-                Toast toast4 = Toast.makeText(getApplicationContext(), "clicked on button4", Toast.LENGTH_SHORT);
-                toast4.show();
                 break;
 
             case (R.id.button_5):
                 currentNumberSelected = 5;
-                Toast toast5 = Toast.makeText(getApplicationContext(), "clicked on button5", Toast.LENGTH_SHORT);
-                toast5.show();
                 break;
 
             case (R.id.button_6):
                 currentNumberSelected = 6;
-                Toast toast6 = Toast.makeText(getApplicationContext(), "clicked on button6", Toast.LENGTH_SHORT);
-                toast6.show();
                 break;
 
             case (R.id.button_7):
                 currentNumberSelected = 7;
-                Toast toast7 = Toast.makeText(getApplicationContext(), "clicked on button7", Toast.LENGTH_SHORT);
-                toast7.show();
                 break;
 
             case (R.id.button_8):
                 currentNumberSelected = 8;
-                Toast toast8 = Toast.makeText(getApplicationContext(), "clicked on button8", Toast.LENGTH_SHORT);
-                toast8.show();
                 break;
 
             case (R.id.button_9):
                 currentNumberSelected = 9;
-                Toast toast9 = Toast.makeText(getApplicationContext(), "clicked on button9", Toast.LENGTH_SHORT);
-                toast9.show();
                 break;
 
 
