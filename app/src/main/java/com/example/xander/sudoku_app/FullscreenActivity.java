@@ -13,10 +13,10 @@ import android.widget.Toast;
 
 
 public class FullscreenActivity extends AppCompatActivity {
-    int currentNumberSelected=5;
+    private int currentNumberSelected=5;
     private Cel sudokuCels[] = new Cel[81];
-
-
+    private TextView numbersLeftTextview[] = new TextView[9];
+    private int numbersLeft[] = new int[9];
 
 
 
@@ -32,6 +32,10 @@ public class FullscreenActivity extends AppCompatActivity {
     }
     public void setup(){
 
+        for(int i=0;i<9;i++){
+            numbersLeft[i]=9;
+        }
+
         for(int i=1;i<82;i++){
             int id;
             if(i<10){
@@ -44,6 +48,12 @@ public class FullscreenActivity extends AppCompatActivity {
             TextView text = (TextView) findViewById(id);
             sudokuCels[i-1] = new Cel(text);
 
+        }
+
+        for(int i=1;i<10;i++){
+            int id;
+            id = getResources().getIdentifier("textview_button_"+i,"id",getPackageName());
+            numbersLeftTextview[i-1] = (TextView) findViewById(id);
         }
 
         String[] puzzle = new String[9];
@@ -68,6 +78,7 @@ public class FullscreenActivity extends AppCompatActivity {
 
             sudokuCels[i].Write(x);
             if(x!=0){
+                numberCounter(x);
                 sudokuCels[i].setLocked();
                 sudokuCels[i].setColor(0);
             }
@@ -80,6 +91,10 @@ public class FullscreenActivity extends AppCompatActivity {
 
     }
 
+    public void numberCounter(int x){
+        numbersLeft[x-1] = numbersLeft[x-1]-1;
+        numbersLeftTextview[x-1].setText(Integer.toString(numbersLeft[x-1]));
+    }
 
 
 
@@ -92,7 +107,9 @@ public class FullscreenActivity extends AppCompatActivity {
         Toast toast1 = Toast.makeText(getApplicationContext(), id_number, Toast.LENGTH_SHORT);
         toast1.show();
 
+        numberCounter(currentNumberSelected);
         sudokuCels[idInt].Write(currentNumberSelected);
+        sudokuCels[idInt].setSelected();
     }
 
     public void numberButtonClicked (View view) {
@@ -154,6 +171,15 @@ public class FullscreenActivity extends AppCompatActivity {
                 break;
 
 
+        }
+
+        for(int i=0;i<81;i++){
+            if(sudokuCels[i].getValue()==currentNumberSelected){
+                sudokuCels[i].setSelected();
+            }
+            else{
+                sudokuCels[i].setUnselected();
+            }
         }
     }
 }

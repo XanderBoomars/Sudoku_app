@@ -2,6 +2,7 @@ package com.example.xander.sudoku_app;
 
 
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.widget.TextView;
 
@@ -46,6 +47,18 @@ public class Cel {
                 celNumber = x;
             }
         }
+    }
+
+    public void setSelected(){
+        celTextView.setBackgroundResource(R.color.selectedCel);
+    }
+
+    public void setUnselected(){
+        celTextView.setBackgroundResource(0);
+    }
+
+    public int getValue(){
+        return celNumber;
     }
 
 
