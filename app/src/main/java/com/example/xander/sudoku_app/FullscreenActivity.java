@@ -13,8 +13,8 @@ import android.widget.Toast;
 
 
 public class FullscreenActivity extends AppCompatActivity {
-    int currentNumberSelected=0;
-    private Cel[] sudokuCels = new Cel[81];
+    int currentNumberSelected=5;
+    private Cel sudokuCels[] = new Cel[81];
 
 
 
@@ -32,7 +32,7 @@ public class FullscreenActivity extends AppCompatActivity {
     }
     public void setup(){
 
-        for(int i=0;i<81;i++){
+        for(int i=1;i<82;i++){
             int id;
             if(i<10){
                 id = getResources().getIdentifier("cel_0" + i, "id", getPackageName());
@@ -42,12 +42,12 @@ public class FullscreenActivity extends AppCompatActivity {
             }
 
             TextView text = (TextView) findViewById(id);
-            sudokuCels[i] = new Cel(text);
+            sudokuCels[i-1] = new Cel(text);
 
         }
 
         String[] puzzle = new String[9];
-        puzzle = getResources().getStringArray(R.array.puzzle_2);
+        puzzle = getResources().getStringArray(R.array.puzzle_1);
 
         StringBuilder puzzleString = new StringBuilder();
         puzzleString.append(puzzle[0]);
@@ -61,10 +61,22 @@ public class FullscreenActivity extends AppCompatActivity {
         puzzleString.append(puzzle[8]);
 
 
-        for(int i=0;i<81;i++){
 
-            //sudokuCels[i].Write(Character.getNumericValue(puzzleString.charAt(i)));
+
+        for(int i=0;i<81;i++){
+            int x = Character.getNumericValue(puzzleString.charAt(i));
+
+            sudokuCels[i].Write(x);
+            if(x!=0){
+                sudokuCels[i].setLocked();
+                sudokuCels[i].setColor(0);
+            }
+            else{
+                sudokuCels[i].setColor(1);
+            }
         }
+
+
 
     }
 
@@ -75,7 +87,10 @@ public class FullscreenActivity extends AppCompatActivity {
     public void celClicked (View view){
         String id = getResources().getResourceName(view.getId());
         String id_number = id.substring(Math.max(id.length() - 2, 0));
-        int idInt = Integer.parseInt(id_number);
+        int idInt = Integer.parseInt(id_number)-1;
+
+        Toast toast1 = Toast.makeText(getApplicationContext(), id_number, Toast.LENGTH_SHORT);
+        toast1.show();
 
         sudokuCels[idInt].Write(currentNumberSelected);
     }
