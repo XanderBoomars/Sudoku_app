@@ -1585,15 +1585,16 @@
 
 
                         <Button
-                            android:id="@+id/button_switch"
+                            android:id="@+id/button_clear"
                             android:layout_width="@dimen/box_size"
                             android:layout_height="@dimen/box_size"
                             android:layout_gravity="center_horizontal"
                             android:layout_weight="1"
-                            android:text="s"
-                            android:textSize="@dimen/textsize_button"
+                            android:text="clear"
+                            android:textSize="25sp"
                             android:textStyle="bold"
                             android:background="@drawable/tags_rounded_corners"
+                            android:onClick="clear"
                             />
 
 

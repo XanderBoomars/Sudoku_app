@@ -115,6 +115,10 @@ public class FullscreenActivity extends AppCompatActivity {
 
     }
 
+    public void clear(){
+
+    }
+
     public void numberCounter(int x){
         numbersLeft[x-1] = numbersLeft[x-1]-1;
         numbersLeftTextview[x-1].setText(Integer.toString(numbersLeft[x-1]));
